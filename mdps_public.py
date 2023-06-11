@@ -62,8 +62,13 @@ if (selected == 'Spai Mail Prediction'):
     # creating a button for Prediction
     
     if st.button('Ham/Spaim'):
-        mail_pred = spaim_pred.predict([[text]])
+        prediction = spaim_pred.predict([[text]])
 
+        if (prediction[0] == 1):
+          mail_pred = 'The person is diabetic'
+        else:
+          mail_pred = 'The person is not diabetic'
+        
     st.success(mail_pred)
     
     
