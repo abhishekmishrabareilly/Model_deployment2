@@ -1,5 +1,5 @@
 
-#####################################################################################
+
 
 
 # -*- coding: utf-8 -*-
@@ -18,7 +18,12 @@ heart_disease_model = pickle.load(open('heart_disease_model.sav', 'rb'))
 
 parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
+#####################################################################################
+spaim_pred = pickle.load(open('spam_mail_prediction.sav', 'rb'))
 
+
+
+#####################################################################################
 
 # sidebar for navigation
 with st.sidebar:
@@ -27,11 +32,42 @@ with st.sidebar:
                           
                           ['Diabetes Prediction',
                            'Heart Disease Prediction',
-                           'Parkinsons Prediction'],
-                          icons=['activity','heart','person'],
+                           'Parkinsons Prediction',
+                          'Spai Mail Prediction'],
+                          icons=['activity','heart','person','person'],
                           default_index=0)
     
     
+    
+    
+#####################################################################################
+# Diabetes Prediction Page
+if (selected == 'Spai Mail Prediction'):
+    
+    # Page Title
+    st.title('Spai Mail Prediction using ML')
+    
+    # Getting the inputdata from the user
+    col1.col2 = st.columns(2)
+    
+    with col1:
+        text = st.text_input('Enter text here')
+        
+    with col2:
+        type = st.text_input('Enter type')
+        
+    # code for Prediction
+    mail_pred = ''
+    
+    # creating a button for Prediction
+    
+    if st.button('Ham/Spaim'):
+        diab_prediction = diabetes_model.predict([[text]])
+
+    st.success(diab_diagnosis)
+    
+    
+#####################################################################################
 # Diabetes Prediction Page
 if (selected == 'Diabetes Prediction'):
     
