@@ -48,13 +48,12 @@ if (selected == 'Spai Mail Prediction'):
     st.title('Spai Mail Prediction using ML')
     
     # Getting the inputdata from the user
-    col1,col2 = st.columns(2)
+    col1 = st.columns(1)
     
     with col1:
         text = st.text_input('Enter text here')
         
-    with col2:
-        type = st.text_input('Enter type')
+
         
     # code for Prediction
     mail_pred = ''
