@@ -62,9 +62,9 @@ if (selected == 'Spai Mail Prediction'):
     # creating a button for Prediction
     
     if st.button('Ham/Spaim'):
-        diab_prediction = diabetes_model.predict([[text]])
+        mail_pred = spaim_pred.predict([[text]])
 
-    st.success(diab_diagnosis)
+    st.success(mail_pred)
     
     
 #####################################################################################
