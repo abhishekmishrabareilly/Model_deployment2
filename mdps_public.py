@@ -65,9 +65,9 @@ if (selected == 'Spai Mail Prediction'):
         prediction = spaim_pred.predict([[text]])
 
         if (prediction[0] == 1):
-          mail_pred = 'The person is diabetic'
+          mail_pred = 'The mail is Sam'
         else:
-          mail_pred = 'The person is not diabetic'
+          mail_pred = 'The mail is Sam'
         
     st.success(mail_pred)
     
